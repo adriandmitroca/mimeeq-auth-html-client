@@ -1,0 +1,16 @@
+{
+    "extends": [
+        "airbnb-base",
+        "plugin:prettier/recommended"
+    ],
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "globals": {
+        "mimeeqAuth": true
+    },
+    "rules": {
+        "no-param-reassign": 0
+    }
+}

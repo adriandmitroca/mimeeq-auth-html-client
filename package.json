@@ -1,0 +1,42 @@
+{
+  "name": "mimeeq-auth-html-client",
+  "version": "0.1.0",
+  "description": "Small library that abstracts Auth API through easy to use HTML5 data attributes without coding.",
+  "main": "dist/index.js",
+  "module": "dist/index.module.js",
+  "unpkg": "dist/index.umd.js",
+  "scripts": {
+    "build": "microbundle",
+    "dev": "microbundle watch",
+    "lint": "eslint src __tests__ --fix; exit 0",
+    "test": "jest",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adriandmitroca/mimeeq-auth-html-client.git"
+  },
+  "keywords": [
+    "mimeeq"
+  ],
+  "author": "adriandmitroca",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adriandmitroca/mimeeq-auth-html-client/issues"
+  },
+  "homepage": "https://github.com/adriandmitroca/mimeeq-auth-html-client",
+  "devDependencies": {
+    "eslint": "^7.4.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "jest": "^26.4.2",
+    "microbundle": "^0.12.3",
+    "prettier": "^2.1.1"
+  },
+  "dependencies": {
+    "js-cookie": "^2.2.1"
+  }
+}
