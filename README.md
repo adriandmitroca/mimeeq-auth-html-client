@@ -4,15 +4,21 @@
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Build Status](https://img.shields.io/travis/adriandmitroca/mimeeq-auth-html-client/master.svg?style=flat-square)](https://travis-ci.org/adriandmitroca/mimeeq-auth-html-client)
 
-## Install
+## Usage with plain JavaScript via CDN
 
-You can install the package via yarn:
+```html
+<script src="https://cdn.jsdelivr.net/npm/mimeeq-auth-html-client@0.1.0"></script>
+```
+
+## Usage as CommonJS module
+
+You can install the package via package manager of your choice, for example with yarn:
 
 ```bash
 $ yarn add mimeeq-auth-html-client
 ```
 
-## Usage
+and then simply import it:
 
 ```js
 import('mimeeq-auth-html-client')

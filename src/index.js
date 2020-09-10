@@ -96,6 +96,7 @@ const setupListeners = () => {
 };
 
 document.addEventListener("mimeeq-auth-loaded", () => {
+    console.log('Mimeeq HTML client initialised');
     setupAuth();
     setupListeners();
 });
