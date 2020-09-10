@@ -1,12 +1,13 @@
 {
   "name": "mimeeq-auth-html-client",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Small library that abstracts Auth API through easy to use HTML5 data attributes without coding.",
   "main": "dist/index.js",
   "module": "dist/index.module.js",
   "unpkg": "dist/index.umd.js",
   "scripts": {
-    "build": "microbundle",
+    "build": "microbundle && npm run microbundle-browser",
+    "microbundle-browser": "microbundle --external none --format umd",
     "dev": "microbundle watch",
     "lint": "eslint src __tests__ --fix; exit 0",
     "test": "jest",
