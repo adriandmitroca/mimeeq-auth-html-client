@@ -7,7 +7,7 @@
 ## Usage with plain JavaScript via CDN
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/mimeeq-auth-html-client@0.1.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/mimeeq-auth-html-client@1.0.0/dist/index.umd.js"></script>
 ```
 
 ## Usage as CommonJS module
