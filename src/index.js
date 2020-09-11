@@ -29,8 +29,8 @@ const openLoginModal = () => {
 };
 
 const setupAuth = () => {
-    const onElements = document.querySelectorAll("[mimeeq-auth-on]");
-    const offElements = document.querySelectorAll("[mimeeq-auth-off]");
+    const onElements = document.querySelectorAll("[mimeeq-auth-on], .mimeeq-logout");
+    const offElements = document.querySelectorAll("[mimeeq-auth-off], .mimeeq-login");
 
     mimeeqAuth.authorization
         .getUserData()
@@ -63,13 +63,13 @@ const setupAuth = () => {
 };
 
 const setupListeners = () => {
-    Array.from(document.querySelectorAll("[mimeeq-login]")).forEach((item) => {
+    Array.from(document.querySelectorAll("[mimeeq-login], .mimeeq-login")).forEach((item) => {
         item.addEventListener("click", () => {
             openLoginModal();
         });
     });
 
-    Array.from(document.querySelectorAll("[mimeeq-logout]")).forEach((item) => {
+    Array.from(document.querySelectorAll("[mimeeq-logout], .mimeeq-logout")).forEach((item) => {
         item.addEventListener("click", () => {
             mimeeqAuth.authorization.signOut().then(() => {
                 removeSessionCookie();
@@ -78,7 +78,7 @@ const setupListeners = () => {
         });
     });
 
-    Array.from(document.querySelectorAll("[mimeeq-profile]")).forEach(
+    Array.from(document.querySelectorAll("[mimeeq-profile], .mimeeq-profile")).forEach(
         (item) => {
             item.addEventListener("click", () => {
                 mimeeqAuth.mountUserProfile();
