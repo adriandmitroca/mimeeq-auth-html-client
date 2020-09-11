@@ -29,8 +29,12 @@ const openLoginModal = () => {
 };
 
 const setupAuth = () => {
-    const onElements = document.querySelectorAll("[mimeeq-auth-on], .mimeeq-logout");
-    const offElements = document.querySelectorAll("[mimeeq-auth-off], .mimeeq-login");
+    const onElements = document.querySelectorAll(
+        "[mimeeq-auth-on], .mimeeq-logout"
+    );
+    const offElements = document.querySelectorAll(
+        "[mimeeq-auth-off], .mimeeq-login"
+    );
 
     mimeeqAuth.authorization
         .getUserData()
@@ -63,14 +67,20 @@ const setupAuth = () => {
 };
 
 const setupListeners = () => {
-    Array.from(document.querySelectorAll("[mimeeq-login], .mimeeq-login")).forEach((item) => {
-        item.addEventListener("click", () => {
+    Array.from(
+        document.querySelectorAll("[mimeeq-login], .mimeeq-login")
+    ).forEach((item) => {
+        item.addEventListener("click", (e) => {
+            e.preventDefault();
             openLoginModal();
         });
     });
 
-    Array.from(document.querySelectorAll("[mimeeq-logout], .mimeeq-logout")).forEach((item) => {
-        item.addEventListener("click", () => {
+    Array.from(
+        document.querySelectorAll("[mimeeq-logout], .mimeeq-logout")
+    ).forEach((item) => {
+        item.addEventListener("click", (e) => {
+            e.preventDefault();
             mimeeqAuth.authorization.signOut().then(() => {
                 removeSessionCookie();
                 window.location.reload();
@@ -78,13 +88,14 @@ const setupListeners = () => {
         });
     });
 
-    Array.from(document.querySelectorAll("[mimeeq-profile], .mimeeq-profile")).forEach(
-        (item) => {
-            item.addEventListener("click", () => {
-                mimeeqAuth.mountUserProfile();
-            });
-        }
-    );
+    Array.from(
+        document.querySelectorAll("[mimeeq-profile], .mimeeq-profile")
+    ).forEach((item) => {
+        item.addEventListener("click", (e) => {
+            e.preventDefault();
+            mimeeqAuth.mountUserProfile();
+        });
+    });
 
     const queryParam = new URLSearchParams(window.location.search).get(
         config.modalQueryParam
@@ -96,7 +107,7 @@ const setupListeners = () => {
 };
 
 document.addEventListener("mimeeq-auth-loaded", () => {
-    console.log('Mimeeq HTML client initialised');
+    console.log("Mimeeq HTML client initialised");
     setupAuth();
     setupListeners();
 });
