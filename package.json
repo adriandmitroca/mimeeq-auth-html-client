@@ -1,6 +1,6 @@
 {
   "name": "mimeeq-auth-html-client",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Small library that abstracts Auth API through easy to use HTML5 data attributes without coding.",
   "main": "dist/index.js",
   "module": "dist/index.module.js",
