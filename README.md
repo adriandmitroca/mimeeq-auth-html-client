@@ -24,6 +24,10 @@ and then simply import it:
 import('mimeeq-auth-html-client')
 ```
 
+### Documentation
+
+You can find detailed documentation [here](https://docs.mimeeq.co.uk/library-html-client).
+
 ### Testing
 
 ``` bash
