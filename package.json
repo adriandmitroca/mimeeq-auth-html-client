@@ -6,8 +6,8 @@
   "module": "dist/index.module.js",
   "unpkg": "dist/index.umd.js",
   "scripts": {
-    "build": "microbundle --sourcemap false && npm run microbundle-browser",
-    "microbundle-browser": "microbundle --external none --format umd --sourcemap false",
+    "build": "microbundle --sourcemap false && npm run microbundle-standalone",
+    "microbundle-standalone": "microbundle -o dist/index.standalone.js --external none --format umd --sourcemap false",
     "dev": "microbundle watch",
     "lint": "eslint src __tests__ --fix; exit 0",
     "test": "jest",
