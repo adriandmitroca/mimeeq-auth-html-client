@@ -9,7 +9,7 @@
 ### Using CDN
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/mimeeq-auth-html-client@1.1.0/dist/index.standalone.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mimeeq-auth-html-client@1.1.0/dist/index.standalone.umd.js"></script>
 ```
 
 ### Using package manager
