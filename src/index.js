@@ -97,6 +97,19 @@ const setupListeners = () => {
         });
     });
 
+    Array.from(
+        document.querySelectorAll(
+            "[mimeeq-configurator-button], .mimeeq-configurator-button"
+        )
+    ).forEach((item) => {
+        item.addEventListener("click", (e) => {
+            e.preventDefault();
+            document.dispatchEvent(new Event("mimeeq-show-modular"));
+        });
+    });
+};
+
+const setupUrls = () => {
     const queryParam = new URLSearchParams(window.location.search).get(
         config.modalQueryParam
     );
@@ -104,10 +117,15 @@ const setupListeners = () => {
     if (queryParam === config.modalQueryValue && !isLoggedIn()) {
         openLoginModal();
     }
+
+    if (window.location.href.indexOf("variantCode") > -1) {
+        document.dispatchEvent(new Event("mimeeq-show-modular"));
+    }
 };
 
 document.addEventListener("mimeeq-auth-loaded", () => {
     console.log("Mimeeq HTML client initialised");
     setupAuth();
     setupListeners();
+    setupUrls();
 });
