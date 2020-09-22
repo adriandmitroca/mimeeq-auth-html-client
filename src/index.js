@@ -20,7 +20,7 @@ const isLoggedIn = () => {
 };
 
 const openLoginModal = () => {
-    window.mimeeqAuth.mountLogin({
+    mimeeqAuth.mountLogin({
         onLoginSuccess: (res) => {
             setSessionCookie(res);
             window.location.reload();
@@ -30,10 +30,10 @@ const openLoginModal = () => {
 
 const setupAuth = () => {
     const onElements = document.querySelectorAll(
-        "[mimeeq-auth-on], .mimeeq-logout"
+        "[mimeeq-auth-on], .mimeeq-auth-off, [mimeeq-logout], .mimeeq-logout, [mimeeq-profile], .mimeeq-profile"
     );
     const offElements = document.querySelectorAll(
-        "[mimeeq-auth-off], .mimeeq-login"
+        "[mimeeq-auth-off], .mimeeq-auth-off, [mimeeq-login], .mimeeq-login"
     );
 
     mimeeqAuth.authorization
