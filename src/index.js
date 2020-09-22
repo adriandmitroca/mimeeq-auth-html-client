@@ -66,7 +66,7 @@ const setupAuth = () => {
         });
 };
 
-const setupListeners = () => {
+const setupAuthListeners = () => {
     Array.from(
         document.querySelectorAll("[mimeeq-login], .mimeeq-login")
     ).forEach((item) => {
@@ -96,7 +96,25 @@ const setupListeners = () => {
             mimeeqAuth.mountUserProfile();
         });
     });
+};
 
+const setupAuthUrls = () => {
+    const queryParam = new URLSearchParams(window.location.search).get(
+        config.modalQueryParam
+    );
+
+    if (queryParam === config.modalQueryValue && !isLoggedIn()) {
+        openLoginModal();
+    }
+};
+
+document.addEventListener("mimeeq-auth-loaded", () => {
+    setupAuth();
+    setupAuthListeners();
+    setupAuthUrls();
+});
+
+const setupListeners = () => {
     Array.from(
         document.querySelectorAll(
             "[mimeeq-configurator-button], .mimeeq-configurator-button"
@@ -110,22 +128,12 @@ const setupListeners = () => {
 };
 
 const setupUrls = () => {
-    const queryParam = new URLSearchParams(window.location.search).get(
-        config.modalQueryParam
-    );
-
-    if (queryParam === config.modalQueryValue && !isLoggedIn()) {
-        openLoginModal();
-    }
-
     if (window.location.href.indexOf("variantCode") > -1) {
         document.dispatchEvent(new Event("mimeeq-show-modular"));
     }
 };
 
-document.addEventListener("mimeeq-auth-loaded", () => {
-    console.log("Mimeeq HTML client initialised");
-    setupAuth();
+document.addEventListener("mimeeq-app-loaded", () => {
     setupListeners();
     setupUrls();
 });
