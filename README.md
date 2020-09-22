@@ -26,19 +26,19 @@ and then simply import it:
 import('mimeeq-auth-html-client')
 ```
 
-### Testing
+## Documentation
+
+You can find detailed documentation [here](https://docs.mimeeq.co.uk/library-html-client).
+
+## Testing
 
 ``` bash
 $ npm run test
 ```
 
-### Changelog
+## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
-
-## Documentation
-
-You can find detailed documentation [here](https://docs.mimeeq.co.uk/library-html-client).
 
 ## Contributing
 
