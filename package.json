@@ -25,7 +25,7 @@
   "bugs": {
     "url": "https://github.com/adriandmitroca/mimeeq-auth-html-client/issues"
   },
-  "homepage": "https://github.com/adriandmitroca/mimeeq-auth-html-client",
+  "homepage": "https://docs.mimeeq.co.uk/library-html-client",
   "devDependencies": {
     "eslint": "^7.4.0",
     "eslint-config-airbnb-base": "^14.2.0",
