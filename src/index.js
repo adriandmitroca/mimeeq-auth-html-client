@@ -5,6 +5,7 @@ const config = {
     cookieExpireInDays: 365,
     modalQueryParam: "auth",
     modalQueryValue: "mimeeq",
+    redirectOnLogin: false,
     ...(window.mimeeqHtmlConfig || {}),
 };
 
@@ -24,7 +25,12 @@ const openLoginModal = () => {
     mimeeqAuth.mountLogin({
         onLoginSuccess: (res) => {
             setSessionCookie(res);
-            window.location.reload();
+
+            if (config.redirectOnLogin) {
+                window.location.href = config.redirectOnLogin;
+            } else {
+                window.location.reload();
+            }
         },
     });
 };
