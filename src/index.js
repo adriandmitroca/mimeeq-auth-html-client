@@ -5,6 +5,7 @@ const config = {
     cookieExpireInDays: 365,
     modalQueryParam: "auth",
     modalQueryValue: "mimeeq",
+    ...(window.mimeeqHtmlConfig || {}),
 };
 
 const setSessionCookie = (body) => {
